@@ -7,18 +7,46 @@
 //
 
 import UIKit
+import Alamofire
+
+
+
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    struct Constants {
+        static let baseURL = "https://api.github.com/users/iX0ness"
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+//        Alamofire.request(Constants.baseURL).responseJSON { (response) in
+//
+//            if let result = response.result.value as? [String: String] {
+//                if let message = result["message"] {
+//                    print(message)
+//                }
+//            } else {
+//                let result = response.data
+//                do {
+//
+//                    let user = try JSONDecoder().decode(User.self, from: result!)
+//                    print(user)
+
+
+        APIClient.login(login: "sdfdsgdsgfdsg", completion: { (user) in
+            print(user?.name)
+        }, failure: { (error) -> Void? in
+            print(error?.message)
+        }) { (local_error) in
+            print(local_error?.localizedDescription)
+        }
+
     }
+
+
 
 
 }
