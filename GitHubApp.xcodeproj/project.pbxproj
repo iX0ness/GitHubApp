@@ -20,7 +20,6 @@
 		32FCF7F32094D95E00236E1E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F22094D95E00236E1E /* APIClient.swift */; };
 		32FCF7F52094D98B00236E1E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F42094D98B00236E1E /* APIRouter.swift */; };
 		32FCF7F72094DAF900236E1E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F62094DAF900236E1E /* Constants.swift */; };
-		32FCF7F92094FF6800236E1E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F82094FF6800236E1E /* Networking.swift */; };
 		FF3F6E2C4CDA12088679F4E9 /* Pods_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB5324057B8D328A23B47C7 /* Pods_GitHubAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		32FCF7F22094D95E00236E1E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		32FCF7F42094D98B00236E1E /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		32FCF7F62094DAF900236E1E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		32FCF7F82094FF6800236E1E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7F411E67509F9ADBFC8E0B1B /* Pods-GitHubAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubAppUITests/Pods-GitHubAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		809C6108B20B1D797F34A434 /* Pods-GitHubAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D59D6200993C1E5B957F2F2 /* Pods-GitHubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubApp/Pods-GitHubApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				32FCF7F22094D95E00236E1E /* APIClient.swift */,
 				32FCF7F42094D98B00236E1E /* APIRouter.swift */,
 				32FCF7F62094DAF900236E1E /* Constants.swift */,
-				32FCF7F82094FF6800236E1E /* Networking.swift */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -449,10 +446,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHubApp/Pods-GitHubApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -487,7 +486,6 @@
 				32FCF7EF20949B8100236E1E /* User.swift in Sources */,
 				32FCF7F32094D95E00236E1E /* APIClient.swift in Sources */,
 				32FCF7F72094DAF900236E1E /* Constants.swift in Sources */,
-				32FCF7F92094FF6800236E1E /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

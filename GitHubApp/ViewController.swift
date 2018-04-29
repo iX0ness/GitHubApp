@@ -8,19 +8,24 @@
 
 import UIKit
 import Alamofire
+import ChameleonFramework
+
 
 
 
 
 class ViewController: UIViewController {
 
-    struct Constants {
-        static let baseURL = "https://api.github.com/users/iX0ness"
-
-    }
+//    struct Constants {
+//        static let baseURL = "https://api.github.com/users/iX0ness"
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+
+
 
 //        Alamofire.request(Constants.baseURL).responseJSON { (response) in
 //
@@ -36,7 +41,7 @@ class ViewController: UIViewController {
 //                    print(user)
 
 
-        APIClient.login(login: "sdfdsgdsgfdsg", completion: { (user) in
+        APIClient.login(login: "iX0ness", completion: { (user) in
             print(user?.name)
         }, failure: { (error) -> Void? in
             print(error?.message)
@@ -46,6 +51,14 @@ class ViewController: UIViewController {
 
     }
 
+
+    func setupUI() {
+
+        // setUP view
+        let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
+        view.backgroundColor = GradientColor(gradientStyle: .topToBottom, frame: view.frame, colors: colors)
+        navigationController?.navigationBar.backgroundColor = FlatGrayDark()
+    }
 
 
 

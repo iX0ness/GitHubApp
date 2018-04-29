@@ -1,12 +1,17 @@
 PODS:
   - Alamofire (4.7.2)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - ChameleonFramework/Swift
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
 
-PODFILE CHECKSUM: 187f2ac93a7b0dcc45edbb3e19da3325cf674798
+PODFILE CHECKSUM: 987fbc25094ba0ebbc6afe7def05f02912298406
 
 COCOAPODS: 1.4.0
