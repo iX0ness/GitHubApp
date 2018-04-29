@@ -16,14 +16,51 @@ import ChameleonFramework
 
 class ViewController: UIViewController {
 
-//    struct Constants {
-//        static let baseURL = "https://api.github.com/users/iX0ness"
-//
-//    }
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var loginTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
+
+
+
+
+
+
+
+    }
+
+    
+    @IBAction func searchUserAction(_ sender: Any) {
+
+        
+
+
+
+    }
+    
+
+    func setupUI() {
+
+        // setUP view
+        let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
+        view.backgroundColor = GradientColor(gradientStyle: .topToBottom, frame: view.frame, colors: colors)
+        navigationController?.navigationBar.backgroundColor = FlatGrayDark()
+
+        // searchButton//
+        searchButton.layer.cornerRadius = 3
+
+    }
+
+
+
+}
+
+
+
 
 
 
@@ -41,26 +78,13 @@ class ViewController: UIViewController {
 //                    print(user)
 
 
-        APIClient.login(login: "iX0ness", completion: { (user) in
-            print(user?.name)
-        }, failure: { (error) -> Void? in
-            print(error?.message)
-        }) { (local_error) in
-            print(local_error?.localizedDescription)
-        }
-
-    }
 
 
-    func setupUI() {
-
-        // setUP view
-        let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
-        view.backgroundColor = GradientColor(gradientStyle: .topToBottom, frame: view.frame, colors: colors)
-        navigationController?.navigationBar.backgroundColor = FlatGrayDark()
-    }
-
-
-
-}
+//APIClient.login(login: "iX0ness", completion: { (user) in
+//    print(user?.name)
+//}, failure: { (error) -> Void? in
+//    print(error?.message)
+//}) { (local_error) in
+//    print(local_error?.localizedDescription)
+//}
 

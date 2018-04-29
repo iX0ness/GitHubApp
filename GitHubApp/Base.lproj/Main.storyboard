@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -25,15 +30,45 @@
                                     <constraint firstAttribute="width" constant="130" id="wYD-C1-c3c"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-fe-PAF">
+                                <rect key="frame" x="30" y="581" width="315" height="36"/>
+                                <color key="backgroundColor" red="0.51084606596969828" green="0.59290241355490969" blue="0.66424006219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Search user">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24o-Gn-oak"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter user nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDm-fk-XtT">
+                                <rect key="frame" x="60" y="495" width="255" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Dab-ls-OZ3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ELz-fe-PAF" secondAttribute="trailing" constant="30" id="3QO-9P-NgC"/>
+                            <constraint firstItem="ELz-fe-PAF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="DXt-pZ-mSe"/>
                             <constraint firstItem="pqe-sJ-bVB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="JcU-fD-rEL"/>
                             <constraint firstItem="pqe-sJ-bVB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QVr-Sn-B4P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ELz-fe-PAF" secondAttribute="bottom" constant="50" id="Udu-BI-Vpz"/>
+                            <constraint firstItem="ELz-fe-PAF" firstAttribute="top" secondItem="qDm-fk-XtT" secondAttribute="bottom" constant="50" id="caG-W5-ZyV"/>
+                            <constraint firstItem="qDm-fk-XtT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="hae-Fo-2Y7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qDm-fk-XtT" secondAttribute="trailing" constant="60" id="v4K-ZY-Wnq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fre-uj-5z7"/>
+                    <connections>
+                        <outlet property="loginTextField" destination="qDm-fk-XtT" id="GET-gS-9QL"/>
+                        <outlet property="searchButton" destination="ELz-fe-PAF" id="8uP-bZ-nGM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
