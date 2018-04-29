@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		0B502E7D8AC842663B239523 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDCC998CFAADADDC3675D2B1 /* Pods_GitHubApp.framework */; };
 		271BCB7CD4C3254EEF9DBA89 /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC483DA75A3931DC5A238FA8 /* Pods_GitHubAppTests.framework */; };
+		321B3C11209672200042AC43 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321B3C10209672200042AC43 /* ViewControllerTests.swift */; };
 		3229CE28208F4E8D003EA303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3229CE27208F4E8D003EA303 /* AppDelegate.swift */; };
 		3229CE2A208F4E8D003EA303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3229CE29208F4E8D003EA303 /* ViewController.swift */; };
 		3229CE2D208F4E8D003EA303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3229CE2B208F4E8D003EA303 /* Main.storyboard */; };
 		3229CE2F208F4E8D003EA303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3229CE2E208F4E8D003EA303 /* Assets.xcassets */; };
 		3229CE32208F4E8D003EA303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3229CE30208F4E8D003EA303 /* LaunchScreen.storyboard */; };
-		3229CE3D208F4E8D003EA303 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3229CE3C208F4E8D003EA303 /* GitHubAppTests.swift */; };
 		3229CE48208F4E8D003EA303 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3229CE47208F4E8D003EA303 /* GitHubAppUITests.swift */; };
+		32CCDBCB209654FD00C6A3EB /* RepoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CCDBCA209654FD00C6A3EB /* RepoListTableViewController.swift */; };
+		32CCDBCD209657C200C6A3EB /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CCDBCC209657C200C6A3EB /* Repo.swift */; };
 		32FCF7EF20949B8100236E1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7EE20949B8100236E1E /* User.swift */; };
 		32FCF7F32094D95E00236E1E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F22094D95E00236E1E /* APIClient.swift */; };
 		32FCF7F52094D98B00236E1E /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F42094D98B00236E1E /* APIRouter.swift */; };
@@ -43,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0AB5324057B8D328A23B47C7 /* Pods_GitHubAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC4B5F1697586AA96692213 /* Pods-GitHubAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubAppUITests/Pods-GitHubAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		321B3C10209672200042AC43 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		3229CE24208F4E8D003EA303 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3229CE27208F4E8D003EA303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3229CE29208F4E8D003EA303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,11 +54,12 @@
 		3229CE31208F4E8D003EA303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3229CE33208F4E8D003EA303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3229CE38208F4E8D003EA303 /* GitHubAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3229CE3C208F4E8D003EA303 /* GitHubAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppTests.swift; sourceTree = "<group>"; };
 		3229CE3E208F4E8D003EA303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3229CE43208F4E8D003EA303 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3229CE47208F4E8D003EA303 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		3229CE49208F4E8D003EA303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32CCDBCA209654FD00C6A3EB /* RepoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableViewController.swift; sourceTree = "<group>"; };
+		32CCDBCC209657C200C6A3EB /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		32FCF7EE20949B8100236E1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32FCF7F22094D95E00236E1E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		32FCF7F42094D98B00236E1E /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
@@ -122,15 +126,13 @@
 		3229CE26208F4E8D003EA303 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				32CCDBC9209654AF00C6A3EB /* Networking */,
+				32CCDBC82096547F00C6A3EB /* Controller */,
+				32CCDBC72096545700C6A3EB /* View */,
 				32FCF7ED20949B6E00236E1E /* Model */,
 				3229CE27208F4E8D003EA303 /* AppDelegate.swift */,
-				3229CE29208F4E8D003EA303 /* ViewController.swift */,
-				3229CE2B208F4E8D003EA303 /* Main.storyboard */,
-				3229CE30208F4E8D003EA303 /* LaunchScreen.storyboard */,
 				3229CE33208F4E8D003EA303 /* Info.plist */,
 				3229CE2E208F4E8D003EA303 /* Assets.xcassets */,
-				32FCF7F22094D95E00236E1E /* APIClient.swift */,
-				32FCF7F42094D98B00236E1E /* APIRouter.swift */,
 				32FCF7F62094DAF900236E1E /* Constants.swift */,
 			);
 			path = GitHubApp;
@@ -139,8 +141,8 @@
 		3229CE3B208F4E8D003EA303 /* GitHubAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				3229CE3C208F4E8D003EA303 /* GitHubAppTests.swift */,
 				3229CE3E208F4E8D003EA303 /* Info.plist */,
+				321B3C10209672200042AC43 /* ViewControllerTests.swift */,
 			);
 			path = GitHubAppTests;
 			sourceTree = "<group>";
@@ -154,10 +156,38 @@
 			path = GitHubAppUITests;
 			sourceTree = "<group>";
 		};
+		32CCDBC72096545700C6A3EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3229CE2B208F4E8D003EA303 /* Main.storyboard */,
+				3229CE30208F4E8D003EA303 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32CCDBC82096547F00C6A3EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3229CE29208F4E8D003EA303 /* ViewController.swift */,
+				32CCDBCA209654FD00C6A3EB /* RepoListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		32CCDBC9209654AF00C6A3EB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				32FCF7F22094D95E00236E1E /* APIClient.swift */,
+				32FCF7F42094D98B00236E1E /* APIRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		32FCF7ED20949B6E00236E1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				32FCF7EE20949B8100236E1E /* User.swift */,
+				32CCDBCC209657C200C6A3EB /* Repo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +296,7 @@
 					};
 					3229CE37208F4E8D003EA303 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3229CE23208F4E8D003EA303;
 					};
@@ -485,7 +516,9 @@
 				3229CE2A208F4E8D003EA303 /* ViewController.swift in Sources */,
 				32FCF7F52094D98B00236E1E /* APIRouter.swift in Sources */,
 				3229CE28208F4E8D003EA303 /* AppDelegate.swift in Sources */,
+				32CCDBCD209657C200C6A3EB /* Repo.swift in Sources */,
 				32FCF7EF20949B8100236E1E /* User.swift in Sources */,
+				32CCDBCB209654FD00C6A3EB /* RepoListTableViewController.swift in Sources */,
 				32FCF7F32094D95E00236E1E /* APIClient.swift in Sources */,
 				32FCF7F72094DAF900236E1E /* Constants.swift in Sources */,
 			);
@@ -495,7 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3229CE3D208F4E8D003EA303 /* GitHubAppTests.swift in Sources */,
+				321B3C11209672200042AC43 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,12 +722,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EDG9RYZ466;
 				INFOPLIST_FILE = GitHubAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iX0ness.GitHubAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubApp.app/GitHubApp";
@@ -707,6 +742,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EDG9RYZ466;
 				INFOPLIST_FILE = GitHubAppTests/Info.plist;

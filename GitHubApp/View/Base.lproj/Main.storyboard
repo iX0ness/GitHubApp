@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="70.614692653673174"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Repo List Table View Controller-->
         <scene sceneID="N6g-TC-bXV">
             <objects>
-                <tableViewController id="p7K-qJ-sYr" sceneMemberID="viewController">
+                <tableViewController id="p7K-qJ-sYr" customClass="RepoListTableViewController" customModule="GitHubApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VOT-dY-JBb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPt-tY-IHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="71"/>
+            <point key="canvasLocation" x="896" y="71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DXn-K6-Qdh">

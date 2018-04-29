@@ -26,12 +26,14 @@ struct User: Codable {
     var name: String?
     var company: String?
     var location: String?
+    var public_repos: Int?
 
     private enum CodingKeys: String, CodingKey {
         case login
         case name
         case company
         case location
+        case public_repos
     }
 
      init(from decoder: Decoder) throws {
@@ -40,5 +42,6 @@ struct User: Codable {
         name = try values.decodeIfPresent(String.self, forKey: .name)
         company = try values.decodeIfPresent(String.self, forKey: .company)
         location = try values.decodeIfPresent(String.self, forKey: .location)
+        public_repos = try values.decodeIfPresent(Int.self, forKey: .public_repos)
     }
 }

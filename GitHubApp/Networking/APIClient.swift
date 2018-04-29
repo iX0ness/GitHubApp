@@ -34,7 +34,7 @@ class APIClient {
                 }
             default: localError(response.error)
             }
-}
-}
+        }
+    }
 
 }
