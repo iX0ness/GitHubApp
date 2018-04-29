@@ -68,11 +68,40 @@
                     <connections>
                         <outlet property="loginTextField" destination="qDm-fk-XtT" id="GET-gS-9QL"/>
                         <outlet property="searchButton" destination="ELz-fe-PAF" id="8uP-bZ-nGM"/>
+                        <segue destination="p7K-qJ-sYr" kind="show" identifier="repositorySegue" id="0Cb-Jj-kue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="70.614692653673174"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="N6g-TC-bXV">
+            <objects>
+                <tableViewController id="p7K-qJ-sYr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VOT-dY-JBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rFc-No-CQQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rFc-No-CQQ" id="dcs-9y-M0g">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p7K-qJ-sYr" id="iaR-vM-dQv"/>
+                            <outlet property="delegate" destination="p7K-qJ-sYr" id="J4s-BZ-7S2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPt-tY-IHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="71"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DXn-K6-Qdh">

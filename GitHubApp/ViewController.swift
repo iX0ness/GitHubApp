@@ -9,15 +9,26 @@
 import UIKit
 import Alamofire
 import ChameleonFramework
-
-
-
+import Presentr
 
 
 class ViewController: UIViewController {
 
+
+
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var loginTextField: UITextField!
+
+    let alertPresenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = .flipHorizontal
+        presenter.dismissTransitionType = .flipHorizontal
+
+        return presenter
+    }()
+
+
+
     
 
     override func viewDidLoad() {
@@ -25,20 +36,19 @@ class ViewController: UIViewController {
         setupUI()
 
 
-
-
-
-
-
-
     }
 
     
     @IBAction func searchUserAction(_ sender: Any) {
 
-        
+            APIClient.login(login: loginTextField.text!, completion: { (user) in
+                self.showAlertUser(user: user)
 
-
+            }, failure: { (error) -> Void? in
+                self.showAlertResponseError(error: error)
+            }) { (local_error) in
+                self.showAlertError(error: local_error)
+            }
 
     }
     
@@ -55,7 +65,58 @@ class ViewController: UIViewController {
 
     }
 
+    func showAlertUser(user: User?) {
+        var alertController: AlertViewController = {
 
+            let alertController = AlertViewController()
+            let cancelAction = AlertAction(title: "Close", style: .cancel, handler: nil)
+            let okAction = AlertAction(title: "Show repos", style: .destructive, handler: { action in self.performSegue(withIdentifier: "repositorySegue", sender: self)})
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            alertController.titleText = "Success"
+            if let login = user?.login {
+                alertController.bodyText = "User \(login) was founded"
+            }
+
+            return alertController
+        }()
+
+        self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
+    }
+
+    func showAlertResponseError(error: ResponseError?) {
+        var alertController: AlertViewController = {
+
+            let alertController = AlertViewController()
+            let cancelAction = AlertAction(title: "Close", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.titleText = "Failed"
+            if let message = error?.message {
+                alertController.bodyText = message
+            }
+
+            return alertController
+        }()
+
+
+
+        self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
+    }
+
+    func showAlertError(error: Error?) {
+        var alertController: AlertViewController = {
+
+            let alertController = AlertViewController()
+            let cancelAction = AlertAction(title: "Close", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.titleText = "Failed"
+            alertController.bodyText = error?.localizedDescription
+
+            return alertController
+        }()
+
+        self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
+    }
 
 }
 
@@ -64,27 +125,5 @@ class ViewController: UIViewController {
 
 
 
-//        Alamofire.request(Constants.baseURL).responseJSON { (response) in
-//
-//            if let result = response.result.value as? [String: String] {
-//                if let message = result["message"] {
-//                    print(message)
-//                }
-//            } else {
-//                let result = response.data
-//                do {
-//
-//                    let user = try JSONDecoder().decode(User.self, from: result!)
-//                    print(user)
 
-
-
-
-//APIClient.login(login: "iX0ness", completion: { (user) in
-//    print(user?.name)
-//}, failure: { (error) -> Void? in
-//    print(error?.message)
-//}) { (local_error) in
-//    print(local_error?.localizedDescription)
-//}
 

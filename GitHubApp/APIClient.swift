@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+
 class APIClient {
 
     static func login(login: String, completion: @escaping (User?) -> Void, failure: @escaping (ResponseError?) -> Void?, localError: @escaping (Error?) -> Void) {

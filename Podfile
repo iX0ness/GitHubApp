@@ -6,6 +6,7 @@ target 'GitHubApp' do
   use_frameworks!
   pod 'Alamofire', '~> 4.7'
   pod 'ChameleonFramework/Swift'
+  pod 'Presentr'
 
   # Pods for GitHubApp
 
