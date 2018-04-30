@@ -14,7 +14,12 @@ import Presentr
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    var repos: Int!
+    private struct Constants {
+        static let repoListIdentifier = "repositorySegue"
+    }
+
+    var reposCount: Int?
+    var login: String?
 
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var loginTextField: UITextField!
@@ -27,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return presenter
     }()
 
+    // MARK: - VC lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +47,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
             APIClient.login(login: loginTextField.text!, completion: { (user) in
                 self.showAlertUser(user: user)
-                self.repos = user?.public_repos
-                print(self.repos)
+                guard let login = user?.login, let repos = user?.public_repos else {return}
 
+                self.login = login
+                self.reposCount = repos
+                print(self.reposCount)
             }, failure: { (error) -> Void? in
                 self.showAlertResponseError(error: error)
             }) { (local_error) in
@@ -53,7 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    func setupUI() {
+   private func setupUI() {
 
         // setUP view
         let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
@@ -65,12 +73,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     }
 
-    func showAlertUser(user: User?) {
+    // MARK: - Alerts setup
+
+     private func showAlertUser(user: User?) {
         let alertController: AlertViewController = {
 
             let alertController = AlertViewController()
             let cancelAction = AlertAction(title: "Close", style: .destructive, handler: nil)
-            let okAction = AlertAction(title: "Show repos", style: .default, handler: { action in self.performSegue(withIdentifier: "repositorySegue", sender: self)})
+
+            let okAction = AlertAction(title: "Show repos", style: .default, handler: { _ in
+                self.performSegue(withIdentifier: Constants.repoListIdentifier, sender: self)
+            })
             alertController.addAction(cancelAction)
             alertController.addAction(okAction)
             alertController.titleText = "Success"
@@ -84,7 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
     }
 
-    func showAlertResponseError(error: ResponseError?) {
+     private func showAlertResponseError(error: ResponseError?) {
         let alertController: AlertViewController = {
 
             let alertController = AlertViewController()
@@ -103,7 +116,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
     }
 
-    func showAlertError(error: Error?) {
+     private func showAlertError(error: Error?) {
         let alertController: AlertViewController = {
 
             let alertController = AlertViewController()
@@ -116,6 +129,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }()
 
         self.customPresentViewController(self.alertPresenter, viewController: alertController, animated: true)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.repoListIdentifier {
+            if let destination = segue.destination as? RepoListTableViewController {
+                destination.login = self.login
+                destination.reposCount = self.reposCount
+                destination.navigationItem.title = self.login
+            }
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
