@@ -20,7 +20,6 @@
 		324D0A462097306800496611 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D0A442097306800496611 /* RepoModel.swift */; };
 		324D0A472097306800496611 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D0A452097306800496611 /* Owner.swift */; };
 		324D0A492097792800496611 /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D0A482097792800496611 /* RepoDetailViewController.swift */; };
-		325563392098DDF100EA1163 /* RepoDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325563382098DDF100EA1163 /* RepoDetailViewControllerTest.swift */; };
 		32CCDBCB209654FD00C6A3EB /* RepoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CCDBCA209654FD00C6A3EB /* RepoListTableViewController.swift */; };
 		32FCF7EF20949B8100236E1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7EE20949B8100236E1E /* User.swift */; };
 		32FCF7F32094D95E00236E1E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FCF7F22094D95E00236E1E /* APIClient.swift */; };
@@ -66,7 +65,6 @@
 		324D0A442097306800496611 /* RepoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
 		324D0A452097306800496611 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		324D0A482097792800496611 /* RepoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
-		325563382098DDF100EA1163 /* RepoDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		32CCDBCA209654FD00C6A3EB /* RepoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListTableViewController.swift; sourceTree = "<group>"; };
 		32FCF7EE20949B8100236E1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32FCF7F22094D95E00236E1E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				3229CE3E208F4E8D003EA303 /* Info.plist */,
-				325563382098DDF100EA1163 /* RepoDetailViewControllerTest.swift */,
 			);
 			path = GitHubAppTests;
 			sourceTree = "<group>";
@@ -544,7 +541,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				325563392098DDF100EA1163 /* RepoDetailViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
