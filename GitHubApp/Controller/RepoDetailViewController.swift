@@ -63,7 +63,7 @@ class RepoDetailViewController: UIViewController {
         }
 
         let newDateFormatter = DateFormatter()
-        newDateFormatter.dateFormat = "MMM d, h:mm a"
+        newDateFormatter.dateFormat = "dd.MM.yy"
         let newDate = newDateFormatter.string(from: _date)
 
         return newDate

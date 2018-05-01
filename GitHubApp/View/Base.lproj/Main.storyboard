@@ -145,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiL-lr-GCE">
-                                <rect key="frame" x="126.5" y="231" width="122" height="29"/>
+                                <rect key="frame" x="126.5" y="252" width="122" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="p8M-05-7j6"/>
                                 </constraints>
@@ -181,7 +181,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIu-C4-qOE">
-                                <rect key="frame" x="16" y="268" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="289" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                             <constraint firstAttribute="trailing" secondItem="1aC-0F-iAo" secondAttribute="trailing" constant="19" id="7kP-gh-XdJ"/>
                             <constraint firstItem="xiL-lr-GCE" firstAttribute="centerX" secondItem="scj-cy-Smi" secondAttribute="centerX" id="AL1-mX-jBz"/>
                             <constraint firstItem="hbH-aZ-TmY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VDU-du-wnX" secondAttribute="trailing" constant="8" symbolic="YES" id="B2g-ZX-gsU"/>
-                            <constraint firstItem="xiL-lr-GCE" firstAttribute="top" secondItem="VDU-du-wnX" secondAttribute="bottom" constant="19" id="FaY-YH-JDs"/>
+                            <constraint firstItem="xiL-lr-GCE" firstAttribute="top" secondItem="VDU-du-wnX" secondAttribute="bottom" constant="40" id="FaY-YH-JDs"/>
                             <constraint firstItem="hbH-aZ-TmY" firstAttribute="centerY" secondItem="VDU-du-wnX" secondAttribute="centerY" id="HaC-nV-lo0"/>
                             <constraint firstItem="BMw-Wf-Enm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mv7-b1-EuA" secondAttribute="trailing" constant="8" symbolic="YES" id="MTt-ZB-WPz"/>
                             <constraint firstItem="YIu-C4-qOE" firstAttribute="leading" secondItem="scj-cy-Smi" secondAttribute="leading" constant="16" id="MY3-oY-irK"/>
