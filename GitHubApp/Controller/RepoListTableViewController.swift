@@ -15,12 +15,14 @@ class RepoListTableViewController: UITableViewController {
 
     private struct Constants {
         static let repoDetailSegue = "repoDetailSegue"
+        static let some = "fdsf"
     }
 
     // MARK: -  Outlets
 
     @IBOutlet var reposTableView: UITableView!
-    
+
+    // MARK: -  Properties
     var login: String?
     var repo: RepoModel?
 
