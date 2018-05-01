@@ -11,9 +11,13 @@ import ChameleonFramework
 
 class RepoListTableViewController: UITableViewController {
 
+    // MARK: -  Constants
+
     private struct Constants {
         static let repoDetailSegue = "repoDetailSegue"
     }
+
+    // MARK: -  Outlets
 
     @IBOutlet var reposTableView: UITableView!
     
