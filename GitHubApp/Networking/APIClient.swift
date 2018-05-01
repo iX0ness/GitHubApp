@@ -18,7 +18,8 @@ class APIClient {
 
     static func getRepos(login: String, completion: @escaping ([RepoModel]?) -> Void, failure: @escaping (ResponseError?) -> Void?, localError: @escaping (Error?) -> Void) {
         self.performRequestWithArrayResponse(router: APIRouter.repos(login: login), completion: completion, failure: failure, localError: localError)
-}
+    }
+
 
     private static func performRequest<T: Codable, E: Codable>(router: APIRouter, completion: @escaping (T?) -> Void, failure: @escaping (E?) -> Void?, localError: @escaping (Error?) -> Void) {
         Alamofire.request(router).response { (response) in
@@ -49,8 +50,8 @@ class APIClient {
             case 200?:
                 do {
                     if let result = response.data {
-                        let user: [T] = try JSONDecoder().decode([T].self, from: result)
-                        completion(user)
+                        let repos: [T] = try JSONDecoder().decode([T].self, from: result)
+                        completion(repos)
                     }
                 }
                 catch {

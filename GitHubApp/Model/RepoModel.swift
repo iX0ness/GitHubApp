@@ -75,7 +75,6 @@ struct RepoModel : Codable {
 	let mirror_url : String?
 	let archived : Bool?
 	let open_issues_count : Int?
-	let license : String?
 	let forks : Int?
 	let open_issues : Int?
 	let watchers : Int?
@@ -149,7 +148,6 @@ struct RepoModel : Codable {
 		case mirror_url = "mirror_url"
 		case archived = "archived"
 		case open_issues_count = "open_issues_count"
-		case license = "license"
 		case forks = "forks"
 		case open_issues = "open_issues"
 		case watchers = "watchers"
@@ -224,7 +222,6 @@ struct RepoModel : Codable {
 		mirror_url = try values.decodeIfPresent(String.self, forKey: .mirror_url)
 		archived = try values.decodeIfPresent(Bool.self, forKey: .archived)
 		open_issues_count = try values.decodeIfPresent(Int.self, forKey: .open_issues_count)
-		license = try values.decodeIfPresent(String.self, forKey: .license)
 		forks = try values.decodeIfPresent(Int.self, forKey: .forks)
 		open_issues = try values.decodeIfPresent(Int.self, forKey: .open_issues)
 		watchers = try values.decodeIfPresent(Int.self, forKey: .watchers)

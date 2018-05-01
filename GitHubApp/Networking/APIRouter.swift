@@ -16,6 +16,7 @@ enum APIRouter: URLRequestConvertible {
     case user(login: String)
     case repos(login: String)
     
+    
 
     private var method: HTTPMethod {
         switch self {
@@ -31,14 +32,13 @@ enum APIRouter: URLRequestConvertible {
         case .repos(let login):
             return "/users/\(login)/repos"
 
+
         }
     }
 
     private var parameters: Parameters? {
         return nil
     }
-
-
 
     func asURLRequest() throws -> URLRequest {
         let url = try K.ProductionServer.baseURL.asURL()

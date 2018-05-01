@@ -47,7 +47,7 @@ struct Owner : Codable {
 		case type = "type"
 		case site_admin = "site_admin"
 	}
-
+ 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		login = try values.decodeIfPresent(String.self, forKey: .login)

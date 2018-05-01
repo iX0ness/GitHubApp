@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
                 self.login = login
                 self.reposCount = repos
-                print(self.reposCount)
+                
             }, failure: { (error) -> Void? in
                 self.showAlertResponseError(error: error)
             }) { (local_error) in

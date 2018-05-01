@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import ChameleonFramework
+
 
 class RepoTableViewCell: UITableViewCell {
+
+    static let reuseIdentifier: String = "RepoTableViewCell"
 
     @IBOutlet weak var repoName: UILabel!
     @IBOutlet weak var repoLang: UILabel!
@@ -16,6 +20,8 @@ class RepoTableViewCell: UITableViewCell {
     func configureCell(repoName: String, repoLang: String) {
         self.repoName.text = repoName
         self.repoLang.text = repoLang
+        backgroundColor = UIColor.clear
+
     }
 
     override func awakeFromNib() {

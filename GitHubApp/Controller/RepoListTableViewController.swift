@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class RepoListTableViewController: UITableViewController {
 
     private struct Constants {
-        static let repoTableViewCellNib = "RepoTableViewCell"
-        static let repoTableViewCell = "RepoTableViewCell"
         static let repoDetailSegue = "repoDetailSegue"
     }
+
     @IBOutlet var reposTableView: UITableView!
     
     var login: String?
     var reposCount: Int?
+    var repo: RepoModel?
 
     var repoModelArray: [RepoModel]? {
         didSet{
@@ -29,8 +30,10 @@ class RepoListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
+        self.setupUI()
         self.performRequest()
     }
+
 
     private func performRequest() {
         guard let login = login else {
@@ -39,6 +42,7 @@ class RepoListTableViewController: UITableViewController {
 
         APIClient.getRepos(login: login, completion: { (repoArray) in
             self.repoModelArray = repoArray
+
         }, failure: { (error_model) -> Void? in
             print("PIZDA")
         }) { (local_error) in
@@ -47,7 +51,8 @@ class RepoListTableViewController: UITableViewController {
     }
 
     private func configureTableView() {
-        self.tableView.register(UINib(nibName: Constants.repoTableViewCellNib, bundle: nil), forCellReuseIdentifier: Constants.repoTableViewCell)
+        self.tableView.register(UINib(nibName: RepoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: RepoTableViewCell.reuseIdentifier)
+        reposTableView.rowHeight = 60
         self.tableView.tableFooterView = UIView()
     }
 
@@ -67,7 +72,7 @@ class RepoListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let repoCell = self.tableView.dequeueReusableCell(withIdentifier: "RepoTableViewCell", for: indexPath) as? RepoTableViewCell, let repoModel = self.repoModelArray else {
+        guard let repoCell = self.tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.reuseIdentifier, for: indexPath) as? RepoTableViewCell, let repoModel = self.repoModelArray else {
             return UITableViewCell()
         }
 
@@ -78,15 +83,30 @@ class RepoListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let repoModel = self.repoModelArray else {return}
+        self.repo = repoModel[indexPath.row]
         performSegue(withIdentifier: Constants.repoDetailSegue, sender: self)
     }
+    
 
-    func prepare(for segue: UIStoryboardSegue, sender: Any?, indexPath: IndexPath) {
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.repoDetailSegue {
             if let destination = segue.destination as? RepoDetailViewController {
-                
+                destination.repo = self.repo
+                destination.navigationItem.title = self.repo?.name ?? ""
+
             }
         }
+    }
+
+    private func setupUI() {
+        let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
+        let bgView = UIView(frame: self.view.frame)
+        bgView.backgroundColor = GradientColor(gradientStyle: .topToBottom, frame: reposTableView.frame, colors: colors)
+        self.reposTableView.backgroundView = bgView
+        navigationController?.navigationBar.backgroundColor = FlatGrayDark()
     }
 
     
