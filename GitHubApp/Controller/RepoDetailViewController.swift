@@ -22,7 +22,7 @@ class RepoDetailViewController: UIViewController {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var updatedAtLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
 
 
     override func viewDidLoad() {
@@ -31,19 +31,15 @@ class RepoDetailViewController: UIViewController {
         presentRepo()
     }
 
+    
     private func presentRepo(){
         guard let repo = repo else {return}
-//        guard let name = repo?.name else
-//        guard let createdAt = repo?.created_at else {return}
-//        guard let updatedAt = repo?.updated_at else {return}
-//        guard let descriptionR = repo?.description else {return}
-//        guard let forks = repo?.forks else {return}
 
         createdAtLabel.text = formatDate(date: repo.created_at) ?? ""
         updatedAtLabel.text = formatDate(date: repo.updated_at) ?? ""
         forksLabel.text = String(repo.forks ?? 0)
+        descriptionLabel.text = repo.description
 
-        print(repo)
     }
 
     private func setupUI() {
@@ -53,6 +49,7 @@ class RepoDetailViewController: UIViewController {
         createdAtLabel.sizeToFit()
         updatedAtLabel.sizeToFit()
         forksLabel.sizeToFit()
+        descriptionLabel.sizeToFit()
 
     }
 
@@ -71,7 +68,5 @@ class RepoDetailViewController: UIViewController {
 
         return newDate
     }
-
-
 
 }

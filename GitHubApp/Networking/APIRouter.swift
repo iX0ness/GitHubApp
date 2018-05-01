@@ -12,11 +12,8 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
 
-
     case user(login: String)
     case repos(login: String)
-    
-    
 
     private var method: HTTPMethod {
         switch self {

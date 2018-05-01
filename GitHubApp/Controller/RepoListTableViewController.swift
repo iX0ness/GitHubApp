@@ -18,7 +18,6 @@ class RepoListTableViewController: UITableViewController {
     @IBOutlet var reposTableView: UITableView!
     
     var login: String?
-    var reposCount: Int?
     var repo: RepoModel?
 
     var repoModelArray: [RepoModel]? {
@@ -44,9 +43,9 @@ class RepoListTableViewController: UITableViewController {
             self.repoModelArray = repoArray
 
         }, failure: { (error_model) -> Void? in
-            print("PIZDA")
+            print(error_model.debugDescription)
         }) { (local_error) in
-            print("ZALUPA")
+            print(local_error?.localizedDescription)
         }
     }
 
