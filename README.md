@@ -8,3 +8,4 @@ With this application you can search a user on GitHub and explore his repositiri
 1. Alamofire - making requests to GitHub and getting responses
 2. ChameleonFramework - creating UI
 3. Presentr - creating alerts
+4. Unit Tests
