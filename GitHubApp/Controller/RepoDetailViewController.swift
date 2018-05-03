@@ -11,19 +11,18 @@ import ChameleonFramework
 
 class RepoDetailViewController: UIViewController {
 
-    var login: String?
-    var repoName: String?
-    var createdAt: String?
-    var updatedAt: String?
-    var descriptionRep: String?
-    var forks: Int?
+    // MARK: -  Properties
+
     var repo: RepoModel?
+
+    // MARK: -  Outlets
 
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var updatedAtLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
+    // MARK: - VC lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,8 @@ class RepoDetailViewController: UIViewController {
         presentRepo()
     }
 
-    
+
+    // MARK: -  Get repo info
     private func presentRepo(){
         guard let repo = repo else {return}
 
@@ -41,6 +41,8 @@ class RepoDetailViewController: UIViewController {
         descriptionLabel.text = repo.description
 
     }
+
+    // MARK: -  View setup
 
     private func setupUI() {
         let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
@@ -53,7 +55,13 @@ class RepoDetailViewController: UIViewController {
 
     }
 
-    private func formatDate(date: String?) -> String? {
+
+    //for testing purpose this function will be public after sucess result change to private
+
+    // MARK: -  Formatting repo name
+    // Formatting if repo name is too long
+
+    func formatDate(date: String?) -> String? {
         guard let date = date else {return nil}
 
         let dateFormatter = DateFormatter()

@@ -15,7 +15,7 @@ class RepoListTableViewController: UITableViewController {
 
     private struct Constants {
         static let repoDetailSegue = "repoDetailSegue"
-        static let some = "fdsf"
+        
     }
 
     // MARK: -  Outlets
@@ -32,6 +32,8 @@ class RepoListTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - VC lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
@@ -39,27 +41,6 @@ class RepoListTableViewController: UITableViewController {
         self.performRequest()
     }
 
-
-    private func performRequest() {
-        guard let login = login else {
-            return
-        }
-
-        APIClient.getRepos(login: login, completion: { (repoArray) in
-            self.repoModelArray = repoArray
-
-        }, failure: { (error_model) -> Void? in
-            print(error_model.debugDescription)
-        }) { (local_error) in
-            print(local_error?.localizedDescription)
-        }
-    }
-
-    private func configureTableView() {
-        self.tableView.register(UINib(nibName: RepoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: RepoTableViewCell.reuseIdentifier)
-        reposTableView.rowHeight = 60
-        self.tableView.tableFooterView = UIView()
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,6 +76,7 @@ class RepoListTableViewController: UITableViewController {
     
 
     
+    // MARK: -  Passing data
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.repoDetailSegue {
@@ -106,12 +88,37 @@ class RepoListTableViewController: UITableViewController {
         }
     }
 
+    // MARK: -  Perform request to GitHub
+
+    private func performRequest() {
+        guard let login = login else {
+            return
+        }
+
+        APIClient.getRepos(login: login, completion: { (repoArray) in
+            self.repoModelArray = repoArray
+
+        }, failure: { (error_model) -> Void? in
+            print(error_model.debugDescription)
+        }) { (local_error) in
+            print(local_error?.localizedDescription)
+        }
+    }
+
+    // MARK: -  View setup
+
     private func setupUI() {
         let colors: [UIColor] = [FlatWhite(), FlatNavyBlue()]
         let bgView = UIView(frame: self.view.frame)
         bgView.backgroundColor = GradientColor(gradientStyle: .topToBottom, frame: reposTableView.frame, colors: colors)
         self.reposTableView.backgroundView = bgView
         navigationController?.navigationBar.backgroundColor = FlatGrayDark()
+    }
+
+    private func configureTableView() {
+        self.tableView.register(UINib(nibName: RepoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: RepoTableViewCell.reuseIdentifier)
+        reposTableView.rowHeight = 60
+        self.tableView.tableFooterView = UIView()
     }
 
     
