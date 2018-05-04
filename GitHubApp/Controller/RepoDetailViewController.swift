@@ -20,6 +20,7 @@ class RepoDetailViewController: UIViewController {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var updatedAtLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
+    @IBOutlet weak var descriptionLabelValue: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
     // MARK: - VC lifecycle
@@ -38,7 +39,15 @@ class RepoDetailViewController: UIViewController {
         createdAtLabel.text = formatDate(date: repo.created_at) ?? ""
         updatedAtLabel.text = formatDate(date: repo.updated_at) ?? ""
         forksLabel.text = String(repo.forks ?? 0)
-        descriptionLabel.text = repo.description
+        if repo.description == nil {
+            descriptionLabelValue.isHidden = true
+            descriptionLabel.isHidden = true
+            
+        } else {
+            descriptionLabelValue.isHidden = false
+            descriptionLabel.isHidden = false
+            descriptionLabelValue.text = repo.description
+        }
 
     }
 
